@@ -1,7 +1,9 @@
 @media screen and (max-width: 1024px) {
 
     .header,
-    .hero {
+    .hero,
+    .benefits,
+    .pricing {
         padding: 1.5rem 2rem;
     }
 
@@ -10,10 +12,11 @@
     }
 
     .about {
-        padding: 4rem 2rem;
+        padding: 4rem;
     }
 
-    .benefits-container .cards {
+    .benefits-container .cards,
+    .prices {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         width: 100%;
@@ -28,7 +31,8 @@
     .next-step,
     .prev-step,
     .complete-step,
-    .close-thankyou-page {
+    .close-thankyou-page,
+    .price .btn {
         display: block;
     }
 
@@ -82,6 +86,10 @@
 
 @media (max-width: 528px) {
 
+    .about {
+        padding: 4rem 2rem;
+    }
+
     .left h1 {
         font-size: 2.1rem;
     }
@@ -101,4 +109,20 @@
     .number p {
         font-size: 1rem;
     }
+
+    .about-container {
+        gap: 2rem;
+    }
+
+    .about-left h2 {
+        font-size: 2.1rem;
+        font-weight: 600;
+        text-shadow: 0 0 10px var(--light);
+    }
+
+    .about-left p {
+        font-size: 0.9rem;
+        font-weight: 400;
+    }
+
 }
