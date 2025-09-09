@@ -9,16 +9,35 @@
         height: auto;
     }
 
+    .about {
+        padding: 4rem 2rem;
+    }
+
+    .benefits-container .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        width: 100%;
+        gap: 2rem;
+    }
+
     .nav,
     .btn {
         display: none;
+    }
+
+    .next-step,
+    .prev-step,
+    .complete-step,
+    .close-thankyou-page {
+        display: block;
     }
 
     .toogle-btn {
         display: block;
     }
 
-    .content {
+    .content,
+    .about-container .container {
         display: flex;
         flex-direction: column;
     }
@@ -27,6 +46,13 @@
         text-align: center;
         justify-content: center;
         padding-top: 12rem;
+        width: 100%;
+    }
+
+    .about-left {
+        text-align: center;
+        justify-content: center;
+        text-align: justify;
         width: 100%;
     }
 

@@ -277,18 +277,128 @@ body {
     font-weight: 600;
 }
 
+/* ==== About Styles ==== */
 
-/* ==== Effects ==== */
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+.about {
+    padding: 6rem 8rem;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--black);
 }
 
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6rem;
+}
+
+.about-container .about-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-shadow: 0 0 10px var(--light);
+}
+
+.about-container .container {
+    display: flex;
+    width: 100%;
+    gap: 2rem;
+}
+
+.about-left {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.about-left h2 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    text-shadow: 0 0 10px var(--light);
+}
+
+.about-left h2 span {
+    color: var(--terciary);
+}
+
+.about-left p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.about-right {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+/* ==== Benefits Styles ==== */
+
+.benefits {
+    padding: 6rem 8rem;
+    height: auto;
+}
+
+.benefits-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+.benefits-container .benefits-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-shadow: 0 0 10px var(--light);
+}
+
+.benefits-container .cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    width: 100%;
+    gap: 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background: var(--black);
+    border: 1px solid var(--terciary);
+    box-shadow: 0 8px 15px var(--black);
+    border-radius: 35px 0 35px 0;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    background: var(--primary);
+    border: 1px solid var(--light);
+}
+
+.card i {
+    font-size: 2rem;
+    color: var(--terciary);
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-shadow: 0 0 10px var(--light);
+}
+
+.card p {
+    font-size: 1.2rem;
+    font-weight: 400;
 }
 
 /* ==== Footer Styles ==== */
@@ -362,4 +472,170 @@ footer {
     padding-top: 30px;
     border-top: 1px solid rgba(30, 41, 59, 0.5);
     color: #cbd5e1;
+}
+
+/* ==== Effects ==== */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==== Modal ==== */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 3, 3, 0.856);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--dark-background);
+    border: 1px solid var(--terciary);
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    padding: 30px;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.modal-progress {
+    height: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.modal-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(270deg, var(--primary-blue), var(--light-blue));
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group option {
+    background: #000;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    transition: var(--transition);
+}
+
+.form-control option {
+    color: var(--secondary-blue);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(22, 22, 22, 0.014);
+}
+
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.next-step,
+.prev-step,
+.complete-step,
+.close-thankyou-page {
+    padding: 15px 35px;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+/* Thank You Modal */
+.thank-you-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.thank-you-modal i {
+    font-size: 4rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.thank-you-modal h2 {
+    margin-bottom: 15px;
+}
+
+.thank-you-modal button {
+    margin-top: 20px;
 }
