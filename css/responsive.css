@@ -1,0 +1,78 @@
+@media screen and (max-width: 1024px) {
+
+    .header,
+    .hero {
+        padding: 1.5rem 2rem;
+    }
+
+    .hero {
+        height: auto;
+    }
+
+    .nav,
+    .btn {
+        display: none;
+    }
+
+    .toogle-btn {
+        display: block;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left {
+        text-align: center;
+        justify-content: center;
+        padding-top: 12rem;
+        width: 100%;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons a:nth-child(1),
+    .buttons a:nth-child(2) {
+        display: block;
+    }
+
+    .numbers {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .right {
+        display: none;
+    }
+
+    footer {
+        padding: 6rem 2rem 2rem 2rem;
+    }
+}
+
+@media (max-width: 528px) {
+
+    .left h1 {
+        font-size: 2.1rem;
+    }
+
+    .left h2 {
+        font-size: 1.2rem;
+    }
+
+    .left p {
+        font-size: 1rem;
+    }
+
+    .number h3 {
+        font-size: 1.6rem;
+    }
+
+    .number p {
+        font-size: 1rem;
+    }
+}
