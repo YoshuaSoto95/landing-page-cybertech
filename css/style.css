@@ -16,13 +16,31 @@
     --primary: #056e3a;
     --secondary: #23c976;
     --terciary: #50fca6;
-    --dark-background: #010f08;
+    --dark-background: #000a05;
+    --dark-background-ii: #01180c;
+    --dark-background-iii: #07301b;
 }
 
 body {
-    background: var(--dark-background);
+    background: linear-gradient(270deg, var(--dark-background), var(--dark-background-ii), var(--dark-background-iii));
+    background-size: 600% 600%;
+    animation: gradientMove 6s ease infinite;
     color: var(--light);
     overflow-x: hidden;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* ==== Header Styles ==== */
@@ -278,6 +296,20 @@ body {
     font-weight: 600;
 }
 
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+.right img {
+    width: 80%;
+    filter: drop-shadow(0 5px 10px var(--black));
+    animation: float 3s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
 /* ==== About Styles ==== */
 
 .about {
@@ -305,6 +337,8 @@ body {
 
 .about-container .container {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     gap: 4rem;
 }
@@ -335,6 +369,12 @@ body {
     display: flex;
     flex-direction: column;
     width: 50%;
+}
+
+.about-right img {
+    width: 100%;
+    border-radius: 15px;
+    animation: float 3s ease-in-out infinite;
 }
 
 /* ==== Benefits Styles ==== */
@@ -506,6 +546,123 @@ body {
 
 .price .btn {
     padding: 1rem 3rem;
+}
+
+/* ==== Comments Styles ==== */
+
+.comments {
+    padding: 6rem 8rem;
+    height: auto;
+}
+
+.comments .section-title {
+    font-size: 1.9rem;
+    font-weight: 600;
+    text-shadow: 0 0 10px var(--light);
+    text-align: center;
+}
+
+.testimonial-slider {
+    position: relative;
+    max-width: 800px;
+    margin: 50px auto 0;
+    overflow: hidden;
+}
+
+.testimonial-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.testimonial-slide {
+    min-width: 100%;
+    padding: 0 20px;
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--terciary);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+}
+
+.testimonial-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 3px solid var(--primary);
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.testimonial-role {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.slider-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.slider-btn:hover {
+    background: var(--primary);
+}
+
+/* ==== Convert Styles ==== */
+.convert {
+    padding: 6rem 8rem;
+    background: url('../asset/section.png') no-repeat center center/cover;
+    height: auto;
+}
+
+.convert-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.convert-container h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-shadow: 0 0 10px var(--light);
+}
+
+.convert-container p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.convert-container .btn {
+    margin-top: 1rem;
+    padding: 0.8rem 6rem;
 }
 
 /* ==== Footer Styles ==== */

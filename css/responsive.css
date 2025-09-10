@@ -3,7 +3,8 @@
     .header,
     .hero,
     .benefits,
-    .pricing {
+    .pricing,
+    .comments {
         padding: 1.5rem 2rem;
     }
 
@@ -32,7 +33,8 @@
     .prev-step,
     .complete-step,
     .close-thankyou-page,
-    .price .btn {
+    .price .btn,
+    .convert-container .btn {
         display: block;
     }
 
@@ -53,7 +55,10 @@
         width: 100%;
     }
 
-    .about-left {
+    .about-left,
+    .about-right {
+        display: flex;
+        flex-direction: column;
         text-align: center;
         justify-content: center;
         text-align: justify;
@@ -76,7 +81,39 @@
     }
 
     .right {
-        display: none;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        text-align: justify;
+        padding-bottom: 2rem;
+        width: 100%;
+    }
+
+    .right img {
+        width: 70%;
+    }
+
+    .pricing-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .convert {
+        padding: 4rem 2rem;
+    }
+
+    .convert-container h2 {
+        font-size: 1.8rem;
+        font-weight: 600;
+        text-shadow: 0 0 10px var(--light);
+    }
+
+    .convert-container p {
+        font-size: 1rem;
+        font-weight: 400;
     }
 
     footer {
@@ -123,6 +160,10 @@
     .about-left p {
         font-size: 0.9rem;
         font-weight: 400;
+    }
+
+    .comments {
+        padding: 2rem 1rem;
     }
 
 }

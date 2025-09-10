@@ -184,3 +184,46 @@ function resetForm() {
     goToStep(1);
     progressBar.style.width = '0%';
 }
+
+// Inicializar carrusel de testimonios
+function initTestimonialSlider() {
+    const track = document.getElementById('testimonialTrack');
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const slideWidth = slides[0].getBoundingClientRect().width;
+
+    // Posicionar slides
+    slides.forEach((slide, index) => {
+        slide.style.left = `${slideWidth * index}px`;
+    });
+
+    // Mover al slide específico
+    function moveToSlide(index) {
+        track.style.transform = `translateX(-${slideWidth * index}px)`;
+        currentTestimonial = index;
+    }
+
+    // Slide anterior
+    prevBtn.addEventListener('click', () => {
+        let newIndex = currentTestimonial - 1;
+        if (newIndex < 0) newIndex = slides.length - 1;
+        moveToSlide(newIndex);
+    });
+
+    // Slide siguiente
+    nextBtn.addEventListener('click', () => {
+        let newIndex = currentTestimonial + 1;
+        if (newIndex >= slides.length) newIndex = 0;
+        moveToSlide(newIndex);
+    });
+
+    // Auto slide cada 5 segundos
+    setInterval(() => {
+        let newIndex = currentTestimonial + 1;
+        if (newIndex >= slides.length) newIndex = 0;
+        moveToSlide(newIndex);
+    }, 5000);
+}
+
+initTestimonialSlider();
